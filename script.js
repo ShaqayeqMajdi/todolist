@@ -1,6 +1,5 @@
 function toggleTheme(theme) {
   const body = document.body;
-
   if (theme === "dark") {
     body.classList.add("dark-theme");
     body.classList.remove("light-theme");
