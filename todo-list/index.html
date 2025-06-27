@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link rel="web icon" href="./assets/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Theme switcher buttons -->
+      <div class="theme-switcher">
+        <button
+          class="theme-switcher__button theme-switcher__button--dark"
+          onclick="toggleTheme('dark')"
+        ></button>
+        <button
+          class="theme-switcher__button theme-switcher__button--light"
+          onclick="toggleTheme('light')"
+        ></button>
+      </div>
+
+      <!-- Main title -->
+      <h1 class="title">Just do it.</h1>
+
+      <div class="todo-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Drop a task"
+          class="todo-form__input"
+        />
+        <button id="add-btn" class="todo-form__button">I Got This!</button>
+      </div>
+
+      <!-- Display date and time -->
+      <p class="datetime">4/5/2025, 10:03:36 PM</p>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn" data-filter="all">All Tasks</button>
+        <button class="filter-btn" data-filter="undone">Undone</button>
+        <button class="filter-btn" data-filter="done">Done</button>
+      </div>
+
+      <!-- Task list -->
+      <ul id="todo-list" class="todo-list">
+        <!-- Task items -->
+        <li class="todo">
+          <span class="todo__item">Shopping</span>
+          <span class="todo__date">(4/6/2025, 10:33:00 PM)</span>
+          <button class="todo__edit-btn">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button class="todo__check-btn">
+            <i class="fas fa-check-double"></i>
+          </button>
+          <button class="todo__delete-btn"><i class="fas fa-trash"></i></button>
+        </li>
+
+        <li class="todo">
+          <span class="todo__item">Cleaning</span>
+          <span class="todo__date">(8/6/2025, 11:23:00 PM)</span>
+          <button class="todo__edit-btn">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button class="todo__check-btn">
+            <i class="fas fa-check-double"></i>
+          </button>
+          <button class="todo__delete-btn"><i class="fas fa-trash"></i></button>
+        </li>
+      </ul>
+
+      <div id="error-popup" class="error-popup">You must write something!</div>
+
+      <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+          <p>Delete this task?</p>
+          <button id="confirm-delete">Yes</button>
+          <button id="cancel-delete">No</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
